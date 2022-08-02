@@ -8,34 +8,30 @@ public:
     sf::RectangleShape rect;
 
     double speed;
+
+    int x, y;
     int width, height;
 
-    Rectangle() 
+    Rectangle(int x, int y)
     {
-        speed = 0.1;  
+        speed = 0.1;
         width = 100;
         height = 100;
 
-        int y = (WINDOW_HEIGHT / 2) - (height / 2);
+        rect.setOrigin(50, 50);
+
+        x = x;
+        y = y;
 
         rect.setSize(sf::Vector2f(100, 100));
-        rect.setPosition(sf::Vector2f(0, y));
+        rect.setPosition(sf::Vector2f(x, y));
     };
 
-    void move() 
+    void rotate()
     {
-        sf::Vector2f position = rect.getPosition();
-        
-        if(position.x >= WINDOW_WIDTH - width)
-        {
-            speed = -0.1;
-        }
+        float rotation = rect.getRotation();
+        float newRotation = rotation + .1;
 
-        if(speed < 0 && position.x <= 0)
-        {
-            speed = 0.1;
-        }
-
-        rect.setPosition(position.x + speed, position.y);
+        rect.setRotation(newRotation);
     }
 };

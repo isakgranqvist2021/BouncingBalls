@@ -6,4 +6,4 @@ g++ main.cpp \
 -L "${SFML_DIRECTORY}/lib"                      \
 -l sfml-graphics -l sfml-window -l sfml-system
 
-./game
+./bin/game
