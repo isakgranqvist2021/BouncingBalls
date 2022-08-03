@@ -21,10 +21,10 @@ int main()
             }
         }
 
+        circle.fall();
+
         WINDOW.clear();
-
         WINDOW.draw(circle.circleShape);
-
         WINDOW.display();
     }
 
